@@ -1570,7 +1570,6 @@ version = "0.1.0"
 dependencies = [
  "num-traits",
  "starknet-core",
- "starknet-providers",
  "tokio",
 ]
 
@@ -1594,6 +1593,7 @@ dependencies = [
  "serde_json",
  "serde_with",
  "starknet-core",
+ "starknet-id",
  "thiserror",
  "tokio",
  "url",
