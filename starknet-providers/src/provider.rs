@@ -6,6 +6,7 @@ use starknet_core::types::{
     FieldElement, StateUpdate, TransactionInfo, TransactionReceipt, TransactionRequest,
     TransactionSimulationInfo, TransactionStatusInfo, TransactionTrace,
 };
+use starknet_id::naming::ResolvingError;
 use std::error::Error;
 
 #[cfg_attr(not(target_arch = "wasm32"), async_trait)]
@@ -132,4 +133,17 @@ pub trait Provider {
     async fn get_last_batch_id(&self) -> Result<u64, Self::Error>;
 
     async fn get_l1_blockchain_id(&self) -> Result<u64, Self::Error>;
+    
+    async fn domain_to_address(
+        &self,
+        domain: &str,
+        contract_addr: FieldElement,
+    ) -> Result<FieldElement, ResolvingError>;
+    
+    async fn address_to_domain(
+        &self,
+        address: FieldElement, 
+        contract_addr: FieldElement
+    ) -> Result<String, ResolvingError>;
+
 }
