@@ -52,6 +52,8 @@ This workspace contains the following crates:
 - `starknet-ff`: StarkNet field element type
 - `starknet-curve`: StarkNet curve operations
 - `starknet-macros`: Useful macros for using the `starknet` crates
+- `starknet-id`: StarkNet-Id internal logic
+
 
 ## WebAssembly
 
@@ -85,6 +87,9 @@ Examples can be found in the [examples folder](./examples):
 5. [Query the latest block number with JSON-RPC](./examples/jsonrpc.rs)
 
 6. [Call a contract view function via sequencer gateway](./examples/sequencer_erc20_balance.rs)
+
+7. [Query the Starknet.id domain name of an address](./examples/resolve_domain.rs)
+
 
 ## License
 
