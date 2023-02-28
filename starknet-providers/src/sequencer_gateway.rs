@@ -687,7 +687,7 @@ impl Provider for SequencerGatewayProvider {
         {
             Ok(result) => {
                 let mut calldata = result.result.iter();
-                let mut domain = String::new().to_owned();
+                let mut domain = String::new();
                 match calldata.next() {
                     Some(_) => {
                         calldata.for_each(|value| {
